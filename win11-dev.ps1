@@ -116,9 +116,9 @@ if ($Manufacturer -match "HP" -and $UseHPIA -eq $true) {
     { $Global:MyOSDCloud.HPIAALL = [bool]$true }
     $Global:MyOSDCloud.HPBIOSUpdate = [bool]$true
     $Global:MyOSDCloud.HPCMSLDriverPackLatest = [bool]$true
-    Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Scope AllUsers -Force 
-    Install-Module -Name PowerShellGet -Scope CurrentUser -AllowClobber -Force
-    Install-Module -Name HPCMSL -Force -Scope AllUsers -SkipPublisherCheck
+    ;Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Scope AllUsers -Force 
+    ;Install-Module -Name PowerShellGet -Scope CurrentUser -AllowClobber -Force
+    Install-Module -Name HPCMSL -AcceptLicense -Force -Scope AllUsers -SkipPublisherCheck
 }
 
 Read-Host -Prompt "Press Enter to continue"
