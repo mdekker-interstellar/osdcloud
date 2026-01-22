@@ -96,7 +96,7 @@ if ($uselocalimage -eq $true) {
 }
 
 #=======================================================================
-#   Specific Driver Pack
+#   HP driverpack
 #=======================================================================
 $DriverPack = Get-OSDCloudDriverPack -Product $Product -OSVersion $OSVersion -OSReleaseID $OSReleaseID
 
@@ -105,12 +105,12 @@ if ($DriverPack) {
 }
 $UseHPIA = $true #disable this for faster deployment, but less up-to-date
 if ($Manufacturer -match "HP" -and $UseHPIA -eq $true) {
-    #$Global:MyOSDCloud.DevMode = [bool]$True
-    $Global:MyOSDCloud.HPTPMUpdate = [bool]$True
-    { $Global:MyOSDCloud.HPIAALL = [bool]$true }
-    $Global:MyOSDCloud.HPBIOSUpdate = [bool]$true
-    $Global:MyOSDCloud.HPCMSLDriverPackLatest = [bool]$true
-    Install-Module -Name HPCMSL -Force -AcceptLicense -Scope AllUsers -SkipPublisherCheck
+    #$Global:MyOSDCloud.DevMode = $True
+    $Global:MyOSDCloud.HPTPMUpdate = $True
+    { $Global:MyOSDCloud.HPIAALL = $true }
+    $Global:MyOSDCloud.HPBIOSUpdate = $true
+    $Global:MyOSDCloud.HPCMSLDriverPackLatest = $true
+    install-module -Name HPCMSL -Force -AcceptLicense -Scope AllUsers -SkipPublisherCheck
 }
 
 #=======================================================================
