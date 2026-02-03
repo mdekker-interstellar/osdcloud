@@ -31,7 +31,7 @@ $Global:MyOSDCloud = [ordered]@{
     ClearDiskConfirm      = [bool]$false
     ShutdownSetupComplete = [bool]$false
     SyncMSUpCatDriverUSB  = [bool]$true
-    CheckSHA1             = [bool]$true
+    CheckSHA1             = [bool]$false
 }
 
 #for a more complete rollout of the OSDCloud process, you can enable the following options: WindowsUpdate, MSCatalogFirmware, WindowsUpdateDrivers, WindowsDefenderUpdate, SyncMSUpCatDriverUSB
